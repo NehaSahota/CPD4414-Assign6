@@ -54,7 +54,7 @@ import org.json.simple.JSONValue;
  * @throws ServletException if a servlet-specific error occurs
  * @throws IOException if an I/O error occurs
  */
-@Path("/products")
+@Path("/product")
 public class ProductServlet {
 
     @GET
