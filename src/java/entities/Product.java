@@ -43,7 +43,7 @@ public class Product {
                    .add("description" , description)
                    .add("quantity" , quantity)
                   .build();
-        }
+    }
     
 
     public int getProductID() {
