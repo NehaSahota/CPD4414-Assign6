@@ -51,7 +51,7 @@ public class ProductRest {
         Response response;
         try {
             productList.add(new Product(json));
-            return Response.ok().build();
+            return Response.ok(productList.get(json.getInt("productID")).toJSON()).build();
         } catch (Exception ex) {
             return Response.status(500).build();
 
@@ -66,7 +66,7 @@ public class ProductRest {
         try {
             Product p = new Product(json);
             productList.set(id, p);
-            return Response.ok().build();
+            return Response.ok("ProductID "+id+" has been updated").build();
         } catch (Exception ex) {
             return Response.status(500).build();
 
@@ -78,7 +78,7 @@ public class ProductRest {
     public Response delete(@PathParam("id") int id) {
         try {
             productList.remove(id);
-            return Response.ok().build();
+            return Response.ok("ProductID "+id+" has been deleted").build();
         } catch (Exception ex) {
             return Response.status(500).build();
         }
