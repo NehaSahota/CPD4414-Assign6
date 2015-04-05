@@ -13,6 +13,7 @@ import java.io.StringReader;
 import java.util.logging.Level;
 import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
+import javax.inject.Inject;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
@@ -28,7 +29,7 @@ import org.jboss.logging.Logger;
 @MessageDriven (mappedName = "jms/Queue")
 public class ProductListener implements MessageListener {
     
-    @EJB
+    @Inject
     ProductList prod;
     
     @Override
